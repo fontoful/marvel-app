@@ -1,0 +1,2 @@
+[] Continue adding properties to the interface to consume the thumbnail
+[] iterate on /characters and output Bootstrap Cards
