@@ -6,6 +6,34 @@ export interface IResponseAPI {
   data: IDataProps
 }
 
+export interface IResultProps {
+  id: number
+  name: string
+  description: ''
+  modified: string
+  resourceURI: string
+  urls: IUrlsProps[]
+  thumbnail: IThumbnailProps
+  comics: IComicsProps
+  stories: IStoriesProps
+  series: ISeriesProps
+}
+
+//? These are not getting exported themselves as they're part (properties) of the ones that are getting exported
+interface IStoriesProps {
+  available: number
+  returned: number
+  collectionURI: string
+  items: [{ resourceURI: string; name: string; type: string }]
+}
+
+interface ISeriesProps {
+  available: number
+  returned: number
+  collectionURI: string
+  items: [{ resourceURI: string; name: string }]
+}
+
 interface IDataProps {
   count: number
   limit: 20
@@ -13,9 +41,19 @@ interface IDataProps {
   results: IResultProps[]
 }
 
-export interface IResultProps {
-  id: number
-  name: string
-  description: ''
-  modified: string
+interface IUrlsProps {
+  type: string
+  url: string
+}
+
+interface IThumbnailProps {
+  path: string
+  extension: string
+}
+
+interface IComicsProps {
+  available: number
+  returned: number
+  collectionURI: string
+  items: [{ resourceURI: string; name: string }]
 }
