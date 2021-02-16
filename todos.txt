@@ -1,2 +1,3 @@
-[] Continue adding properties to the interface to consume the thumbnail
-[] iterate on /characters and output Bootstrap Cards
+[*] Continue adding properties to the interface to consume the thumbnail
+[*] iterate on /characters and output Bootstrap Cards
+[] Add grid to the /Characters 

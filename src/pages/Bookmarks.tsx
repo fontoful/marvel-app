@@ -1,5 +1,7 @@
+import Navigation from '../components/Navigation'
+
 const Bookmarks: React.FC = () => {
-  return <p>Hello from Bookmarks.tsx</p>
+  return <Navigation liText='comics' />
 }
 
 export default Bookmarks

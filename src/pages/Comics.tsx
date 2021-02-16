@@ -1,5 +1,7 @@
+import Navigation from '../components/Navigation'
+
 const Comics: React.FC = () => {
-  return <p>hello from Comics.tsx</p>
+  return <Navigation liText='characters' bookmarks={true} />
 }
 
 export default Comics
