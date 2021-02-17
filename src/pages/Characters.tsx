@@ -37,14 +37,14 @@ const Characters: React.FC = () => {
   return (
     <Container>
       <Navigation liText='comics' bookmarks={true} />
-      <Row>
+      <Row style={{ margin: 'auto' }}>
         {loading ? (
           <div className='mx-auto mt-5'>
             <Spinner animation='border' />
           </div>
         ) : (
-          <Row style={{ margin: 'auto' }}>
-            <Col className='grid'>
+          <Col>
+            <div className='grid'>
               {characters.map((char: IResultProps) => (
                 <Card key={char.id}>
                   <Card.Img src={unifyString(char.thumbnail)} />
@@ -59,8 +59,8 @@ const Characters: React.FC = () => {
                   </Card.Body>
                 </Card>
               ))}
-            </Col>
-          </Row>
+            </div>
+          </Col>
         )}
       </Row>
     </Container>

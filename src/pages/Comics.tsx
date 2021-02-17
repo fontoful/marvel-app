@@ -37,24 +37,22 @@ const Comics: React.FC = () => {
   return (
     <Container>
       <Navigation liText='characters' bookmarks={true} />
-      <Row>
+      <Row style={{ margin: 'auto' }}>
         {loading ? (
           <div className='mx-auto mt-5'>
             <Spinner animation='border' />
           </div>
         ) : (
-          <Row style={{ margin: 'auto' }}>
-            <Col className='grid'>
-              {comics.map((char: IResultProps) => (
-                <Card key={char.id}>
-                  <Card.Img variant='top' src={unifyString(char.thumbnail)} />
-                  <Card.Body>
-                    <Card.Title>{char.title}</Card.Title>
-                  </Card.Body>
-                </Card>
-              ))}
-            </Col>
-          </Row>
+          <Col className='grid'>
+            {comics.map((char: IResultProps) => (
+              <Card key={char.id}>
+                <Card.Img variant='top' src={unifyString(char.thumbnail)} />
+                <Card.Body>
+                  <Card.Title>{char.title}</Card.Title>
+                </Card.Body>
+              </Card>
+            ))}
+          </Col>
         )}
       </Row>
     </Container>
