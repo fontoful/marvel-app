@@ -12,7 +12,6 @@ body {
 
 img {
   max-width: 100%;
-  // width: 100%;
 }
 
 ul,
@@ -84,7 +83,13 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: auto;
-  gap: 0.5em;
+  gap: 1rem;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 18vw;
+  }
 }
 
 ul.myNav {

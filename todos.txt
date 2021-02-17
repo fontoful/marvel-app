@@ -1,3 +1,4 @@
 [*] Continue adding properties to the interface to consume the thumbnail
 [*] iterate on /characters and output Bootstrap Cards
-[] Add grid to the /Characters 
+[*] Add grid to the /Characters 
+[] Add new route /Characters/:id

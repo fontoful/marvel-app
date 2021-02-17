@@ -50,8 +50,12 @@ const Characters: React.FC = () => {
                   <Card.Img src={unifyString(char.thumbnail)} />
                   <Card.Body>
                     <Card.Title>{char.name}</Card.Title>
-                    <Card.Text>{char.description}</Card.Text>
-                    <Button variant='primary'>Go somewhere</Button>
+                    <Button
+                      onClick={() => console.log('button click')}
+                      variant='primary'
+                    >
+                      Go somewhere
+                    </Button>
                   </Card.Body>
                 </Card>
               ))}

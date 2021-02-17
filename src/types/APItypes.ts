@@ -9,6 +9,7 @@ export interface IResponseAPI {
 export interface IResultProps {
   id: number
   name: string
+  title: string
   description: ''
   modified: string
   resourceURI: string
