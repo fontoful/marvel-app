@@ -92,6 +92,11 @@ header {
   }
 }
 
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
 ul.myNav {
   display: flex;
   justify-content: space-around;

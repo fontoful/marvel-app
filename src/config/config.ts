@@ -2,6 +2,7 @@
 import Bookmarks from '../pages/Bookmarks'
 import Comics from '../pages/Comics'
 import Characters from '../pages/Characters'
+import Character from '../pages/Character'
 import Dashboard from '../pages/Dashboard'
 
 // type definitions
@@ -18,6 +19,12 @@ const routes: IRouteProps[] = [
     path: '/characters',
     name: 'characters',
     component: Characters,
+    exact: true,
+  },
+  {
+    path: '/characters/:id',
+    name: 'character',
+    component: Character,
     exact: true,
   },
   {
