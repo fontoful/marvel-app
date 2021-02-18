@@ -1,3 +1,5 @@
+$red-color: #ed1d24;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -101,7 +103,7 @@ ul.myNav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #ed1d24;
+  background: $red-color;
   width: 24rem;
   border-radius: 1rem;
   padding: 1.5rem;
@@ -111,3 +113,17 @@ ul.myNav {
     color: white;
   }
 }
+
+// truncate titles
+// .card-title {
+//   width: 250px;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+
+//   padding: 20px;
+//   font-size: 1.3rem;
+//   margin: 0;
+//   background: white;
+//   resize: horizontal;
+// }
