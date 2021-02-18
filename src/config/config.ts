@@ -1,6 +1,7 @@
 // Components
 import Bookmarks from '../pages/Bookmarks'
 import Comics from '../pages/Comics'
+import Comic from '../pages/Comic'
 import Characters from '../pages/Characters'
 import Character from '../pages/Character'
 import Dashboard from '../pages/Dashboard'
@@ -31,6 +32,12 @@ const routes: IRouteProps[] = [
     path: '/comics',
     name: 'comics',
     component: Comics,
+    exact: true,
+  },
+  {
+    path: '/comics/:id',
+    name: 'comic',
+    component: Comic,
     exact: true,
   },
   {
