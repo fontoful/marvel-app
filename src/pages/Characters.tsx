@@ -1,8 +1,17 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 
 // React Bootstrap
-import { Card, Col, Container, Row, Spinner, Button } from 'react-bootstrap'
+import {
+  Card,
+  Col,
+  Container,
+  Row,
+  Spinner,
+  Button,
+  ButtonGroup,
+} from 'react-bootstrap'
 
 // utils
 import { url } from '../services'
@@ -46,16 +55,19 @@ const Characters: React.FC = () => {
           <Col>
             <div className='grid'>
               {characters.map((char: IResultProps) => (
-                <Card key={char.id}>
+                <Card style={{ cursor: 'pointer' }} key={char.id}>
                   <Card.Img src={unifyString(char.thumbnail)} />
                   <Card.Body>
                     <Card.Title>{char.name}</Card.Title>
-                    <Button
-                      onClick={() => console.log('button click')}
-                      variant='primary'
-                    >
-                      Go somewhere
-                    </Button>
+                    <ButtonGroup>
+                      <Link to={`/characters/${char.id}`}>
+                        <Button className='mr-2' variant='info'>
+                          View it
+                        </Button>
+                      </Link>
+
+                      <Button variant='danger'>Bookmark it</Button>
+                    </ButtonGroup>
                   </Card.Body>
                 </Card>
               ))}

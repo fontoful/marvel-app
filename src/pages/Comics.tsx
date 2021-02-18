@@ -1,5 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Col, Container, Spinner, Row, Card } from 'react-bootstrap'
+import {
+  Col,
+  Container,
+  Spinner,
+  Row,
+  Card,
+  Button,
+  ButtonGroup,
+} from 'react-bootstrap'
 
 // components
 import Navigation from '../components/Navigation'
@@ -10,6 +18,7 @@ import { unifyString } from '../utils/helper'
 
 //interfaces
 import { IResponseAPI, IResultProps } from '../types/APItypes'
+import { Link } from 'react-router-dom'
 
 const Comics: React.FC = () => {
   const [comics, setComics] = useState<IResultProps[]>([])
@@ -49,6 +58,14 @@ const Comics: React.FC = () => {
                 <Card.Img variant='top' src={unifyString(char.thumbnail)} />
                 <Card.Body>
                   <Card.Title>{char.title}</Card.Title>
+                  <ButtonGroup>
+                    <Link to={`/comics/${char.id}`}>
+                      <Button className='mr-2' variant='info'>
+                        View it
+                      </Button>
+                    </Link>
+                    <Button variant='danger'>Bookmark it</Button>
+                  </ButtonGroup>
                 </Card.Body>
               </Card>
             ))}

@@ -9,7 +9,7 @@ import { url } from '../services'
 import { IResponseAPI, IResultProps } from '../types/APItypes'
 import { unifyString } from '../utils/helper'
 
-const Character: React.FC = props => {
+const Character: React.FC = () => {
   const [character, setCharacter] = useState<IResultProps[]>([])
   const [loading, setLoading] = useState(false)
 
@@ -57,14 +57,9 @@ const Character: React.FC = props => {
           <div className='comics'>
             <h1>comics ↕ </h1>
             <nav>
-              {/* <ul>
-                {myCharacter.map((char: IResultProps) => (
-                  <li>{char.comics.items.map(comic => comic.name)}</li>
-                ))}
-              </ul> */}
               <ul>
                 {myCharacter.comics.items.map(comic => (
-                  <li>{comic.name}</li>
+                  <li key={comic.name}>{comic.name}</li>
                 ))}
               </ul>
             </nav>

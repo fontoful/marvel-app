@@ -2,5 +2,5 @@
 [*] iterate on /characters and output Bootstrap Cards
 [*] Add grid to the /Characters 
 [*] Add new route /Characters/:id
-[] Create an onClick on the Characters arr that I'm iterating to send to /characters/:id
+[*] Create an onClick on the Characters arr that I'm iterating to send to /characters/:id
 [] Persist to localStorage
