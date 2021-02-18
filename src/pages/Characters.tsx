@@ -3,15 +3,7 @@ import { Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 
 // React Bootstrap
-import {
-  Card,
-  Col,
-  Container,
-  Row,
-  Spinner,
-  Button,
-  ButtonGroup,
-} from 'react-bootstrap'
+import { Card, Col, Container, Row, Spinner, Button } from 'react-bootstrap'
 
 // utils
 import { url } from '../services'
@@ -58,16 +50,13 @@ const Characters: React.FC = () => {
                 <Card style={{ cursor: 'pointer' }} key={char.id}>
                   <Card.Img src={unifyString(char.thumbnail)} />
                   <Card.Body>
-                    <Card.Title>{char.name}</Card.Title>
-                    <ButtonGroup>
-                      <Link to={`/characters/${char.id}`}>
-                        <Button className='mr-2' variant='info'>
-                          View it
-                        </Button>
-                      </Link>
-
-                      <Button variant='danger'>Bookmark it</Button>
-                    </ButtonGroup>
+                    <Card.Title>
+                      {char.name}
+                      <i className='far fa-heart' />
+                    </Card.Title>
+                    <Link to={`/characters/${char.id}`}>
+                      <Button variant='outline-info'>View it</Button>
+                    </Link>
                   </Card.Body>
                 </Card>
               ))}

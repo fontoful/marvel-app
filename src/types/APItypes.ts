@@ -15,6 +15,7 @@ export interface IResultProps {
   resourceURI: string
   urls: IUrlsProps[]
   thumbnail: IThumbnailProps
+  characters: any
   comics: IComicsProps
   stories: IStoriesProps
   series: ISeriesProps
@@ -47,7 +48,7 @@ interface IUrlsProps {
   url: string
 }
 
-interface IThumbnailProps {
+export interface IThumbnailProps {
   path: string
   extension: string
 }

@@ -3,4 +3,5 @@
 [*] Add grid to the /Characters 
 [*] Add new route /Characters/:id
 [*] Create an onClick on the Characters arr that I'm iterating to send to /characters/:id
+[] Add types to the map iteration in /comics/:id
 [] Persist to localStorage
