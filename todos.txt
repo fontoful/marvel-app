@@ -6,5 +6,7 @@
 [*] Add types to the map iteration in /comics/:id
 [*] Persist to localStorage
 [] Check if the Characters in /comics/:id is empty to put up a disclaimer
-[] Conditionally change the className so the heart is filled if it's bookmarked
-[] Add the method to addComictoBookmark
+[*] Conditionally change the className so the heart is filled if it's bookmarked
+[*] Add the method to addComictoBookmark
+[] continue styling individual comic & character views/pages
+[] work on the search filter
