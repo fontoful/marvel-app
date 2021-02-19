@@ -3,5 +3,8 @@
 [*] Add grid to the /Characters 
 [*] Add new route /Characters/:id
 [*] Create an onClick on the Characters arr that I'm iterating to send to /characters/:id
-[] Add types to the map iteration in /comics/:id
-[] Persist to localStorage
+[*] Add types to the map iteration in /comics/:id
+[*] Persist to localStorage
+[] Check if the Characters in /comics/:id is empty to put up a disclaimer
+[] Conditionally change the className so the heart is filled if it's bookmarked
+[] Add the method to addComictoBookmark

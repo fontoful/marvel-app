@@ -41,7 +41,6 @@ const Comic: React.FC = () => {
   }, [id])
 
   const [myComic] = comic
-  console.log(myComic)
 
   return loading ? (
     <Row style={{ margin: 'auto' }}>

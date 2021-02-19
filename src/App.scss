@@ -19,10 +19,18 @@ img {
 ul,
 li {
   list-style: none;
+  text-decoration: none;
 }
 
-a {
-  text-decoration: none;
+i {
+  margin-left: 1rem;
+}
+
+a,
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none !important;
 }
 
 header {

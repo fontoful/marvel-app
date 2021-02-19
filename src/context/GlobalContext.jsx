@@ -18,7 +18,6 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
 
   useEffect(() => {
-    console.log('setting localStorage', state)
     localStorage.setItem(
       'characterBookmarks',
       JSON.stringify(state.characterBookmarks),
