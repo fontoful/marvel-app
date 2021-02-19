@@ -10,7 +10,7 @@ import { unifyString } from '../utils/helper'
 
 //interfaces
 import { IResponseAPI, IResultProps } from '../types/APItypes'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Comics: React.FC = () => {
   const [comics, setComics] = useState<IResultProps[]>([])
