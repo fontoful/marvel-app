@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { find } from 'lodash'
 import Navigation from '../components/Navigation'
 
 // React Bootstrap
@@ -20,17 +19,33 @@ const Characters: React.FC = () => {
   const [characters, setCharacters] = useState<IResultProps[]>([])
   const [loading, setLoading] = useState<boolean>(false)
 
-  const { addCharToBookmarks, characterBookmarks } = useContext(GlobalContext)
+  const {
+    addCharToBookmarks,
+    characterBookmarks,
+    removeCharFromBookmarks,
+  } = useContext(GlobalContext)
 
   const checkBookmarkValidity = (id: number) => {
-    const found = find(characterBookmarks, character => {
-      return character.id === id
-    })
+    const found = characterBookmarks.find(
+      (character: IResultProps) => character.id === id,
+    )
 
     if (found) {
       return true
     } else {
       return false
+    }
+  }
+
+  const bookMarkHandler = (char: IResultProps) => {
+    const found = characterBookmarks.find(
+      (character: IResultProps) => character.id === char.id,
+    )
+
+    if (found) {
+      return removeCharFromBookmarks(char.id)
+    } else {
+      return addCharToBookmarks(char)
     }
   }
 
@@ -71,7 +86,7 @@ const Characters: React.FC = () => {
                     <Card.Title>
                       {char.name}
                       <i
-                        onClick={() => addCharToBookmarks(char)}
+                        onClick={() => bookMarkHandler(char)}
                         className={
                           checkBookmarkValidity(char.id)
                             ? 'fas fa-bookmark'
