@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 
 // React Bootstrap
 import { Card, Col, Container, Row, Spinner, Button } from 'react-bootstrap'
+
+//context
+import { GlobalContext } from '../context/GlobalContext'
 
 // utils
 import { url } from '../services'
@@ -15,6 +18,8 @@ import { IResponseAPI, IResultProps } from '../types/APItypes'
 const Characters: React.FC = () => {
   const [characters, setCharacters] = useState<IResultProps[]>([])
   const [loading, setLoading] = useState<boolean>(false)
+
+  const { addCharToBookmarks } = useContext(GlobalContext)
 
   useEffect(() => {
     setLoading(true)
@@ -52,7 +57,9 @@ const Characters: React.FC = () => {
                   <Card.Body>
                     <Card.Title>
                       {char.name}
-                      <i className='far fa-heart' />
+                      <button onClick={() => addCharToBookmarks(char)}>
+                        <i className='far fa-heart' />
+                      </button>
                     </Card.Title>
                     <Link to={`/characters/${char.id}`}>
                       <Button variant='outline-info'>View it</Button>
