@@ -7,6 +7,9 @@ import {
 } from 'react-router-dom'
 import routes from './config/config'
 
+//Context
+import { GlobalProvider } from './context/GlobalContext'
+
 // Styles
 import './App.scss'
 
@@ -15,28 +18,30 @@ import Layout from './hoc/Layout'
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Switch>
-          {routes.map((myRoute, index) => {
-            return (
-              <Route
-                key={index}
-                path={myRoute.path}
-                exact={myRoute.exact}
-                render={(props: RouteComponentProps<any>) => (
-                  <myRoute.component
-                    name={myRoute.name}
-                    {...props}
-                    {...myRoute.props}
-                  />
-                )}
-              />
-            )
-          })}
-        </Switch>
-      </Layout>
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <Layout>
+          <Switch>
+            {routes.map((myRoute, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={myRoute.path}
+                  exact={myRoute.exact}
+                  render={(props: RouteComponentProps<any>) => (
+                    <myRoute.component
+                      name={myRoute.name}
+                      {...props}
+                      {...myRoute.props}
+                    />
+                  )}
+                />
+              )
+            })}
+          </Switch>
+        </Layout>
+      </Router>
+    </GlobalProvider>
   )
 }
 
