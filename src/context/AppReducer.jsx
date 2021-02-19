@@ -12,6 +12,18 @@ export const AppReducer = (state, action) => {
           character => character.id !== action.payload,
         ),
       }
+    case 'ADD_COMIC_BOOKMARK':
+      return {
+        ...state,
+        comicsBookmarks: [action.payload, ...state.comicsBookmarks],
+      }
+    case 'REMOVE_COMIC_BOOKMARK':
+      return {
+        ...state,
+        comicsBookmarks: state.comicsBookmarks.filter(
+          comic => comic.id !== action.payload,
+        ),
+      }
     default:
       console.error(`no matching reducer type for ${action.type}`)
       return state

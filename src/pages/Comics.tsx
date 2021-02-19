@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Col, Container, Spinner, Row, Card, Button } from 'react-bootstrap'
 
 // components
 import Navigation from '../components/Navigation'
+
+// context
+import { GlobalContext } from '../context/GlobalContext'
 
 //services
 import { url } from '../services'
@@ -16,6 +19,34 @@ const Comics: React.FC = () => {
   const [comics, setComics] = useState<IResultProps[]>([])
   const [loading, setLoading] = useState(false)
   const { push } = useHistory()
+
+  const {
+    comicsBookmarks,
+    addComicToBookmarks,
+    removeComicFromBookmarks,
+  } = useContext(GlobalContext)
+
+  const checkBookmarkValidity = (id: number) => {
+    const found = comicsBookmarks.find((comic: IResultProps) => comic.id === id)
+
+    if (found) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const bookMarkHandler = (comic: IResultProps) => {
+    const found = comicsBookmarks.find(
+      (comicObj: IResultProps) => comicObj.id === comic.id,
+    )
+
+    if (found) {
+      return removeComicFromBookmarks(comic.id)
+    } else {
+      addComicToBookmarks(comic)
+    }
+  }
 
   useEffect(() => {
     setLoading(true)
@@ -51,7 +82,15 @@ const Comics: React.FC = () => {
                 <Card.Img variant='top' src={unifyString(char.thumbnail)} />
                 <Card.Body>
                   <Card.Title>
-                    {char.title} <i className='far fa-heart' />
+                    {char.title}{' '}
+                    <i
+                      onClick={() => bookMarkHandler(char)}
+                      className={
+                        checkBookmarkValidity(char.id)
+                          ? 'fas fa-bookmark'
+                          : 'far fa-bookmark'
+                      }
+                    />
                   </Card.Title>
                   <Button
                     onClick={() => push(`/comics/${char.id}`)}

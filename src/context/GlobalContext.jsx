@@ -29,13 +29,19 @@ export const GlobalProvider = ({ children }) => {
   }, [state])
 
   const addCharToBookmarks = character => {
-    console.log('addCharToBookmark func called')
     dispatch({ type: 'ADD_CHAR_BOOKMARK', payload: character })
   }
 
   const removeCharFromBookmarks = id => {
-    console.log('removecharFromBookarmks was called')
     dispatch({ type: 'REMOVE_CHAR_BOOKMARK', payload: id })
+  }
+
+  const addComicToBookmarks = comic => {
+    dispatch({ type: 'ADD_COMIC_BOOKMARK', payload: comic })
+  }
+
+  const removeComicFromBookmarks = id => {
+    dispatch({ type: 'REMOVE_COMIC_BOOKMARK', payload: id })
   }
 
   return (
@@ -45,6 +51,8 @@ export const GlobalProvider = ({ children }) => {
         comicsBookmarks: state.comicsBookmarks,
         addCharToBookmarks,
         removeCharFromBookmarks,
+        addComicToBookmarks,
+        removeComicFromBookmarks,
       }}
     >
       {children}
