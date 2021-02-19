@@ -57,9 +57,10 @@ const Characters: React.FC = () => {
                   <Card.Body>
                     <Card.Title>
                       {char.name}
-                      <button onClick={() => addCharToBookmarks(char)}>
-                        <i className='far fa-heart' />
-                      </button>
+                      <i
+                        onClick={() => addCharToBookmarks(char)}
+                        className='far fa-heart'
+                      />
                     </Card.Title>
                     <Link to={`/characters/${char.id}`}>
                       <Button variant='outline-info'>View it</Button>

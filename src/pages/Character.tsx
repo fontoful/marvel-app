@@ -2,7 +2,14 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 //React Bootstrap
-import { Button, Card, Container, Jumbotron } from 'react-bootstrap'
+import {
+  Button,
+  Card,
+  Container,
+  Jumbotron,
+  Row,
+  Spinner,
+} from 'react-bootstrap'
 
 // services
 import { url } from '../services'
@@ -38,7 +45,13 @@ const Character: React.FC = () => {
   const [myCharacter] = character
 
   // return character.length > 0 ? <h1>{myCharacter.name}</h1> : null
-  return character.length > 0 ? (
+  return loading ? (
+    <Row style={{ margin: 'auto' }}>
+      <div className='mx-auto mt-5'>
+        <Spinner animation='border' />
+      </div>
+    </Row>
+  ) : character.length > 0 ? (
     <Jumbotron fluid>
       <Container>
         <div className='flex'>
