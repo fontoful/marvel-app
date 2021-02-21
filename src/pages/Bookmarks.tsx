@@ -94,7 +94,7 @@ const Bookmarks: React.FC = () => {
             </h1>
             <div className='grid'>
               {characterBookmarks.map((char: IResultProps) => (
-                <Card>
+                <Card key={char.id}>
                   <Card.Img src={unifyString(char.thumbnail)} />
                   <Card.Body>
                     <Card.Title>
@@ -115,7 +115,7 @@ const Bookmarks: React.FC = () => {
                 </Card>
               ))}
               {comicsBookmarks.map((comic: IResultProps) => (
-                <Card>
+                <Card key={comic.id}>
                   <Card.Img src={unifyString(comic.thumbnail)} />
                   <Card.Body>
                     <Card.Title>
