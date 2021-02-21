@@ -8,5 +8,6 @@
 [] Check if the Characters in /comics/:id is empty to put up a disclaimer
 [*] Conditionally change the className so the heart is filled if it's bookmarked
 [*] Add the method to addComictoBookmark
-[] continue styling individual comic & character views/pages
-[] work on the search filter
+[*] continue styling individual comic & character views/pages
+[*] make the onSubmitForm func async and start fetching based on queryParams and updating the localState arr to map
+[*] work on the search filter
